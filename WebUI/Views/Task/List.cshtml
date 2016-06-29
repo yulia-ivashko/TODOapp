@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TODO.domain.Entities.Task>
+ 
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@foreach (var t in Model)
+{
+    <div class="item">
+        <h3>@t.Name</h3>
+        @t.Priority
+        <h4>Total Price @t.Date.ToString("c")</h4>
+    </div>
+}
