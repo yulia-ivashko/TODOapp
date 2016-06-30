@@ -8,7 +8,7 @@ namespace TODO.domain.Concrete
     {
         private EFDbContext context = new EFDbContext();
 
-        public IEnumerable<Entities.Task> tasks
+        public IEnumerable<Entities.Task> Tasks
         {
             get
             {

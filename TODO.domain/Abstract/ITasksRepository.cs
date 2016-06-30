@@ -8,6 +8,6 @@ namespace TODO.domain.Abstract
 {
     public interface ITasksRepository
     {
-        IEnumerable<Entities.Task> tasks { get; }
+        IEnumerable<Entities.Task> Tasks { get; }
     }
 }

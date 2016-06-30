@@ -7,12 +7,10 @@
 }
 
 <h2>List</h2>
-
-@foreach (var t in Model)
-{
-    <div class="item">
-        <h3>@t.Name</h3>
-        @t.Priority
-        <h4>Total Price @t.Date.ToString("c")</h4>
-    </div>
-}
+<table class="table">
+    <tr><th>Name</th><th>Priority</th><th>Date</th><th>Comment</th><th>Is Done</th></tr>
+    @foreach (var t in Model)
+    {
+       <tr class="@(t.IsCompleted == false ? "danger" : "")"><td>@t.Name</td><td>@t.Priority</td><td>@t.Date</td><td>@t.Comment</td><td>@t.IsCompleted</td></tr>
+    }
+</table>

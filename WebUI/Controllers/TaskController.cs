@@ -21,11 +21,11 @@ namespace WebUI.Controllers
         {
             try
             {
-                return View(repository.tasks);
+                return View(repository.Tasks);
             }
             catch (ArgumentNullException e)
             {
-                return e;
+                return null;
             }
         }
     }
