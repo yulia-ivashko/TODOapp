@@ -18,8 +18,8 @@ namespace WebUI
                 url: "{controller}/{action}/{id}",
                 defaults: new
                 {
-                    controller = "Task",
-                    action = "List",
+                    controller = "Tasks",
+                    action = "Index",
                     id = UrlParameter.Optional
                 }
             );

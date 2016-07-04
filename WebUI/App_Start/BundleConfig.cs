@@ -26,6 +26,14 @@ namespace WebUI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularJS").Include(
+                     "~/Scripts/angular.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/customJS").Include(
+                                 "~/Scripts/TaskScripts/Module.js",
+                                 "~/Scripts/TaskScripts/Service.js",
+                                 "~/Scripts/TaskScripts/Controller.js"));
         }
     }
 }

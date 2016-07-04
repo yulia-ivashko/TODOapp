@@ -9,7 +9,7 @@ using TODO.domain.Abstract;
 using TODO.domain.Entities;
 using Moq;
 using TODO.domain.Concrete;
-
+using TODO.domain.UOF;
 
 namespace WebUI.Infrastructure
 {
@@ -40,6 +40,7 @@ namespace WebUI.Infrastructure
                 });
                 */
             ninjectKernel.Bind<ITasksRepository>().To<EFTaskRepository>();        //ToConstant(mock.Object);
+            ninjectKernel.Bind<IUnitOfWork>().To<UnitOfWork>();
         }
     }
 }
