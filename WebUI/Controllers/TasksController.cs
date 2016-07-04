@@ -22,6 +22,12 @@ namespace WebUI.Controllers
             return View(await db.Tasks.ToListAsync());
         }
 
+        // GET: Active Tasks
+        public async Task<ActionResult> IndexActive()
+        {
+            return View(await db.Tasks.ToListAsync());
+        }
+
         // GET: Tasks/Details/5
         public async Task<ActionResult> Details(int? id)
         {

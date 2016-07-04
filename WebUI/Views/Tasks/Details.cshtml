@@ -59,8 +59,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.TaskId }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TaskId }, new { @class = "btn btn-primary", @style = "color:white" }) 
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info", @style = "color:white" })
     </p>
 </body>
 </html>

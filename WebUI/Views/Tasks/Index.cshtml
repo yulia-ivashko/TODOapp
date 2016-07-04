@@ -50,8 +50,6 @@
             </td>
             <td>
               @item.Date.ToString(" dd MMM yyyy")
-
-                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comment)
@@ -62,9 +60,9 @@
                 new { onclick = "SomeMethod(this)" })
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.TaskId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.TaskId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.TaskId })
+                @Html.ActionLink("Edit", "Edit", new { id=item.TaskId }, new { @class = "btn btn-xs btn-warning", @style = "color:white" }) 
+                @Html.ActionLink("Details", "Details", new { id=item.TaskId }, new { @class = "btn btn-xs btn-info", @style = "color:white" }) 
+                @Html.ActionLink("Delete", "Delete", new { id=item.TaskId }, new { @class = "btn btn-xs btn-danger", @style = "color:white" })
             </td>
         </tr>
     }
@@ -72,6 +70,7 @@
     </table>
     <p>
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary", @style = "color:white" })
+        @Html.ActionLink("Active tasks only", "IndexActive", null, new { @class = "btn btn-info", @style = "color:white" })
     </p>
    
 </body>

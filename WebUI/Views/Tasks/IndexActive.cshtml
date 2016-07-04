@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TODO.domain.Entities.Task>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Where(c => c.IsCompleted == false)) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority)
+        </td>
+        <td>
+           
+            @item.Date.ToString(" dd MMM yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.CheckBox("item.IsCompleted",
+                item.IsCompleted != null && (bool)item.IsCompleted,
+                new { onclick = "SomeMethod(this)" })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }, new { @class = "btn btn-xs btn-warning", @style = "color:white" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TaskId }, new { @class = "btn btn-xs btn-info", @style = "color:white" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TaskId }, new { @class = "btn btn-xs btn-danger", @style = "color:white" })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+
+    @Html.ActionLink("Back to All Tasks", "Index", null, new { @class = "btn btn-primary", @style = "color:white" })
+</div> 
