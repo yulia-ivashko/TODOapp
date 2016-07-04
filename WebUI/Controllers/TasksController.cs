@@ -117,6 +117,12 @@ namespace WebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public JsonResult Save(bool newValue)
+        {
+            //repository.Update();
+            return null;
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -34,6 +34,23 @@ namespace WebUI
                                  "~/Scripts/TaskScripts/Module.js",
                                  "~/Scripts/TaskScripts/Service.js",
                                  "~/Scripts/TaskScripts/Controller.js"));
+
+          
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-datetimepicker.min.js",
+                      "~/Scripts/respond.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                                  "~/Content/bootstrap.css",
+                                  "~/Content/bootstrap-datetimepicker.min.css",
+                                  "~/Content/site.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/themes/base/jquery.ui.all.css",
+                      "~/Content/site.css"));
         }
     }
 }

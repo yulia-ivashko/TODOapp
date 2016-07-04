@@ -10,11 +10,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/datepicker.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
     <table class="table">
         <tr>
             <th>
@@ -44,13 +49,17 @@
                 @Html.DisplayFor(modelItem => item.Priority)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+              @item.Date.ToString(" dd MMM yyyy")
+
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comment)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsCompleted)
+                @Html.CheckBox("item.IsCompleted",
+                item.IsCompleted != null && (bool)item.IsCompleted, 
+                new { onclick = "SomeMethod(this)" })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.TaskId }) |
@@ -61,5 +70,9 @@
     }
     
     </table>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary", @style = "color:white" })
+    </p>
+   
 </body>
 </html>
