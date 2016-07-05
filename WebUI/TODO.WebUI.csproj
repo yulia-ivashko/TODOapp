@@ -361,10 +361,6 @@
       <Project>{eb90bb2a-8e21-4e97-bbbd-5b5875e7ed26}</Project>
       <Name>TODO.domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TODO.UnitTests\TODO.UnitTests.csproj">
-      <Project>{69cc1c47-4d5d-4c10-a401-73cba41658df}</Project>
-      <Name>TODO.UnitTests</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

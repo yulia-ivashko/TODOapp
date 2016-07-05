@@ -50,8 +50,6 @@ namespace WebUI.Controllers
         }
 
         // POST: Tasks/Create
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "TaskId,Name,Priority,Date,Comment,IsCompleted")] TODO.domain.Entities.Task task)
@@ -82,8 +80,6 @@ namespace WebUI.Controllers
         }
 
         // POST: Tasks/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "TaskId,Name,Priority,Date,Comment,IsCompleted")] TODO.domain.Entities.Task task)
